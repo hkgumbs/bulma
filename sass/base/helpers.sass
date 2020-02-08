@@ -22,8 +22,8 @@
 // Typography
 
 =typography-size($target:'')
-  @each $size in $sizes
-    $i: index($sizes, $size)
+  @for $i from 1 through length($sizes)
+    $size: nth($sizes, $i)
     .is-size-#{$i}#{if($target == '', '', '-' + $target)}
       font-size: $size !important
 
